@@ -1,0 +1,6 @@
+#pk_customlinks li.pk_account.custom_link_added > a{
+	background: none !important;
+}
+.pk_account .indent, .pk_account .dd_container {
+    display: none !important;
+}

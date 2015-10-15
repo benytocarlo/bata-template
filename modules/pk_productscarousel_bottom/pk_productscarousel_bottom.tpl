@@ -1,0 +1,277 @@
+{if $page_name == "index"}
+<!-- productsCarousel_bottom -->
+<div class="prolow">
+  <div class="nameproman Mobile">
+   <h1 class="titleone">{l s='PRODUCTOS' mod='pk_productscarousel_single'}</h1>
+   <h1 class="titletwo">{l s='DESTACADOS' mod='pk_productscarousel_single'}</h1>
+   <a href="/12-hombres">{l s='VER TODOS LOS PRODUCTOS' mod='pk_productscarousel_single'}</a>
+  </div>
+  <div class="poscenter">
+  <div id="productsCarousel_bottom" class="carouselDesktop load-animate homemodule">
+      <!--table class="title-table">
+        <tr>
+          <td class="w50p"><span class="right-wing title-wing"></span></td>
+          <td class="carousel-title"><h3 class="lmroman">{if $pr_type == "fea"}
+          {l s='Productos destacados' mod='pk_productscarousel_bottom'}
+        {elseif $pr_type == "new"}
+          {l s='New Products' mod='pk_productscarousel_bottom'}
+        {elseif $pr_type == "spe"}
+          {l s='On Sale' mod='pk_productscarousel_bottom'}
+        {elseif $pr_type == "bes"}
+          {l s='Bestsellers' mod='pk_productscarousel_bottom'}
+        {/if}</h3></td>
+          <td class="w50p"><span class="left-wing title-wing"></span></td>
+        </tr>
+      </table-->
+      <div class="wht-bg slidebottom">
+        <div class="indent">
+          {if (!empty($products_kit) && $products_kit)}
+            <ul id="products-bottom" class="da-thumbs slides products-module">
+                {foreach from=$products_kit item=set name=set key=k}
+                {if (!empty($set) && $set)}
+                {assign var='productLink' value=$link->getProductLink($set.data.id_product, $set.data.link_rewrite)}
+                <li class="block_product ajax_block_product slide" data-productid="{$set.data.id_product}">
+                    <div class="carouselContainer" onclick="window.location='{$productLink}'">
+                      <div class="slide-animate">
+
+                        <a href="{$productLink}" title="{$set.data.legend}" class="product_image p{$set.data.id_product}">
+
+                          <img src="{$link->getImageLink($set.data.link_rewrite, "{$set.prodCover.id_product}-{$set.prodCover.id_image}", 'home_default')}" alt="{$set.data.name|escape:html:'UTF-8'}" class="add_to_cart_image" height="115" width="180" />
+
+                        </a>
+
+                          {if isset($p_hover) && ($p_hover == 1)}
+                            {if isset($set.image)}
+                              <a href="{$productLink}" title="{$set.data.legend}" class="additional-image smooth02">
+                                <img src="{$link->getImageLink($set.data.link_rewrite, "{$set.data.id_product}-{$set.image}", 'home_'|cat:$cookie->img_name)}" alt="{$set.data.name|escape:html:'UTF-8'}" />                    
+                              </a>
+                            {/if}
+                          {/if}
+
+                          {if ($countdown == true)}
+                              {assign var=to value="-"|explode:$set.data.specific_prices.to} 
+                              {if isset($set.data.specific_prices.to) && ($to[0] != "0000")}
+                                <div class="countdown countdown-{$set.data.id_product}" title="{
+                                     'To the end of this offer'}"></div>
+                                <script>
+                                $(document).ready(function(){
+                                  $(function() {
+                                    $('#productsCarousel_bottom .countdown-{$set.data.id_product}').countdown({
+                                        date: "{$set.data.specific_prices.to|replace:' ':'T'}",
+                                          render: function(data) {
+                                            $(this.el).html("<div>" + this.leadingZeros(data.days, 2) + " <span>{l s='Days'}</span></div><div>" + this.leadingZeros(data.hours, 2) + " <span>{l s='Hours'}</span></div><div>" + this.leadingZeros(data.min, 2) + " <span>{l s='Min'}</span></div><div>" + this.leadingZeros(data.sec, 2) + " <span>{l s='Sec'}</span></div>");
+                                            $(this.el).attr('title', this.leadingZeros(data.days, 2)+" {l s='Days'} {l s='and'} "+this.leadingZeros(data.hours, 2)+" {l s='Hours'} {l s='to the end of this offer'}");
+                                          }
+                                    });
+                                });
+                                });
+                                </script>               
+                              {/if}
+                          {/if}
+
+                          <span class="labels">
+                            
+                            {if $set.data.show_price AND !isset($restricted_country_mode) AND !$PS_CATALOG_MODE}
+                                {if isset($set.data.specific_prices.price)}
+                                  <span class="pk-reduction">
+                                    {if $set.data.specific_prices.reduction_type == "amount"}
+                                        -{convertPrice price=$set.data.specific_prices.reduction}
+                                    {else}
+                                        -{$set.data.specific_prices.reduction*100|round:2}%        
+                                    {/if}
+                                  </span>
+                                {/if}                            
+                            {/if}
+                          </span>
+
+                          <span class="label-marca">
+                            <img class="dib" src="{$img_manu_dir}{$set.data.id_manufacturer}.jpg" alt="" />
+                          </span>
+                  
+
+                          {*if isset($quick_view) && $quick_view}
+                            <a class="quick-view normview" href="{$set.data.link|escape:'html':'UTF-8'}" rel="{$set.data.link|escape:'html':'UTF-8'}" title="{l s='Quick view'}"><svg class="svgic svgic-search"><use xlink:href="#si-search"></use></svg></a>
+                          {/if*}
+                        
+                          <div class="function_buttons smooth02 altview">
+
+                            	{if ($wishlist.install == "installed") && ($wishlist.enable == "enabled") && !$PS_CATALOG_MODE}
+                                <div class="function_button dib product_wishlist sec_bshadow_hvr smooth02 sec_bg_hvr{if $isInWishList[$set.data.id_product] == 1} sec_bg sec_bshadow remove{/if}">
+                                      <a href="#" class="wishlist_button addToWishlist" title="{if $isInWishList[$set.data.id_product] == 1}{l s='Este producto ya se encuentra en tu lista de deseos' mod='pk_productscarousel_bottom'}{else}{l s='Agregar a la lista de deseos' mod='pk_productscarousel_bottom'}{/if}">
+                                        <svg class="svgic svgic-like"><use xlink:href="#si-like"></use></svg>
+                                      </a>
+                                 </div>
+                                {/if}
+                                
+                                {*if ($favorite.install == "installed") && ($favorite.enable == "enabled")}
+                                  <div class="function_button dib product_like sec_bshadow_hvr smooth02 sec_bg_hvr {if $isFav[$set.data.id_product] == 1} sec_bg sec_bshadow{/if}">
+                                    <a title="{l s='Add this product to my favorites' mod='pk_productscarousel_bottom'}" href="#" class="addfav dib{if $isFav[$set.data.id_product] == 1} hidden{/if}">
+                                      <svg class="svgic svgic-wishlist"><use xlink:href="#si-wishlist"></use></svg>
+                                    </a>
+                                    <a title="{l s='Remove product from my favorites' mod='pk_productscarousel_bottom'}" href="#" class="remfav  dib{if $isFav[$set.data.id_product] != 1} hidden{/if}">
+                                      <svg class="svgic svgic-wishlist"><use xlink:href="#si-wishlist"></use></svg>
+                                    </a>
+                                    </div>
+                                {/if*}
+
+                                  <!--<div class="function_button dib quickview sec_bshadow_hvr smooth02 sec_bg_hvr">
+                                    <a class="quick-view" href="{$set.data.link|escape:'html':'UTF-8'}" rel="{$set.data.link|escape:'html':'UTF-8'}" title="{l s='Quick view'}">
+                                      <svg class="svgic svgic-search"><use xlink:href="#si-search"></use></svg>
+                                    </a>
+                                  </div>-->
+
+                          </div>
+                            <a class="f_title ellipsis nameproslider" href="{$productLink}" title="{$set.data.legend}">{$set.data.name|escape:htmlall:'UTF-8'|truncate:35}</a>
+                            <p class="shordes">{$set.data.description_short|strip_tags:'UTF-8'|truncate:70}</p>
+                      </div>
+
+                      <div class="bottom_block">
+                          <span class="priceproduct lmroman">{displayPrice price=$set.data.price}</span> 
+                          {if isset($set.data.specific_prices.price)}
+                          <span class="precio-oferta lmroman">
+                            {l s='PRECIO OFERTA' mod='pk_productscarousel_bottom'}
+                          </span> 
+                            {/if}
+
+                            {if isset($p_button) && ($p_button == 1)}
+                          	<div class="carousel-buttons hvr-shop smooth02">
+								{if !$PS_CATALOG_MODE}	
+                              		<a href="{$set.data.link}" class="btn-buy-single">{l s='COMPRAR' mod='pk_productscarousel_bottom'}</a>
+                              		{if ($set.data.quantity > 0 OR $set.data.allow_oosp)}
+                                		<a class="exclusive ajax_add_to_cart_button button dib" href="{$link->getPageLink('cart',false, NULL, "add=1&amp;id_product={$set.data.id_product|intval}&amp;token={$static_token}", false)|escape:'html':'UTF-8'}" data-id-product="{$set.data.id_product|intval}">
+                                			<span>{l s='AGREGAR A LA BOLSA' mod='pk_productscarousel_bottom'}</span>
+                                		</a>
+                                	{/if}
+                                	{if ($wishlist.install == "installed") && ($wishlist.enable == "enabled")}
+                                		<div class="function_button normview product_wishlist{if $isInWishList[$set.data.id_product] == 1} active{/if}"><a href="#" class="wishlist_button sec_bg_hvr dib button addToWishlist" onclick="WishlistCart('wishlist_block_list', 'add', '{$set.data.id_product|intval}', false, 1, '.p{$set.data.id_product|intval} .image-cover'); return false;" data-wishid="{$set.data.id_product|intval}" title="{if $isInWishList[$set.data.id_product] == 1}{l s='Este producto ya se encuentra en tu lista de deseos' mod='pk_productscarousel_bottom'}{else}{l s='Agregar a la lista de deseos' mod='pk_productscarousel_bottom'}{/if}"><svg class="svgic svgic-like"><use xlink:href="#si-like"></use></svg></a>
+                                		</div>
+                              		{/if}
+                              	{else}
+                              		<a href="{$set.data.link}" class="custom-view-product-list">{l s='VER DETALLE' mod='pk_productscarousel_bottom'}</a>
+                              	{/if}
+
+                              {*if ($favorite.install == "installed") && ($favorite.enable == "enabled")}
+                                <div class="function_button normview product_like{if $isFav[$set.data.id_product] == 1} active{/if}"><a title="{l s='Add this product to my favorites' mod='pk_productscarousel_bottom'}" href="#" class="addfav sec_bg_hvr dib button{if $isFav[$set.data.id_product] == 1} hidden{/if}"><svg class="svgic svgic-wishlist"><use xlink:href="#si-wishlist"></use></svg></a><a title="{l s='Remove product from my favorites' mod='pk_productscarousel_bottom'}"  href="#" class="remfav sec_bg_hvr dib button{if $isFav[$set.data.id_product] != 1} hidden{/if}"><svg class="svgic svgic-wishlist"><use xlink:href="#si-wishlist"></use></svg></a></div>
+                              {/if*}
+                          </div>
+                          {/if}           
+                      </div>
+                  </div>
+              </li>
+              {/if}
+              {/foreach}
+          </ul>
+          {else}
+            <p class="alert alert-warning">{l s='No hay productos en estos momentos' mod='pk_productscarousel_bottom'}</p>
+          {/if}
+          <div class="clearfix"></div>                    
+        </div>
+      </div>
+      <div class="promo30">
+        <p>
+          {l s='Busca tus productos en tu tienda ' mod='pk_productscarousel_bottom'}
+          <span>{l s='Bata ' mod='pk_productscarousel_bottom'}</span>          
+          {l s='más cercana.' mod='pk_productscarousel_bottom'}
+        </p>
+      </div>
+  </div>
+  </div>
+ <div class="nameproman">
+   <h1 class="titleone">{l s='PRODUCTOS' mod='pk_productscarousel_single'}</h1>
+   <h1 class="titletwo">{l s='DESTACADOS' mod='pk_productscarousel_single'}</h1>
+   <a href="/12-hombre">{l s='VER TODOS LOS PRODUCTOS' mod='pk_productscarousel_single'}</a>
+  </div>
+  <div class="manprodes" data-stellar-ratio="1.5"></div>
+</div>
+{strip}
+{addJsDefL name=favadd}{l s='has been added to your favorites' mod='pk_productscarousel_bottom' js=1}{/addJsDefL}
+{addJsDefL name=favrem}{l s='has been removed from your favorites' mod='pk_productscarousel_bottom' js=1}{/addJsDefL}
+{/strip}
+<script>
+$(document).ready(function() {
+      $("#products-bottom").slick({
+            slidesToShow: {if isset($bc_products_visible)}{$bc_products_visible}{else}5{/if},
+            slidesToScroll: 1,
+            autoPlay: {if isset($bc_autoplay) && $bc_autoplay == 1}true{else}false{/if},
+            autoPlaySpeed: 3000,            
+            pauseOnHover: false,
+            focusOnSelect:false,
+            waitForAnimate:false,
+            infinite:false,
+            arrows:true,
+            responsive: [
+              {
+                breakpoint: 1270,
+                settings: {
+                  slidesToShow: 4,
+                  slidesToScroll: 1,
+                  infinite: false,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 1170,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: false,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 1080,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: false,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 979,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  infinite: false,
+                  dots: false
+                }
+              },
+              {
+                breakpoint: 727,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1
+                }
+              },
+              {
+                breakpoint: 479,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+            ]
+            /*enableResponsiveBreakpoints: true,
+            responsiveBreakpoints: { 
+                portrait: { 
+                    changePoint:400,
+                    visibleItems: 1
+                }, 
+                landscape: { 
+                    changePoint:768,
+                    visibleItems: 2
+                },
+                tablet: { 
+                    changePoint:991,
+                    visibleItems: 3
+                },
+                tablet_land: { 
+                    changePoint:1199,
+                    visibleItems: {if isset($bc_products_visible)}{$bc_products_visible}{else}5{/if}
+                }
+            }*/
+      });
+    $("#productsCarousel_bottom").find(".flexisel-nav").appendTo("#productsCarousel_bottom .carousel-title");
+});
+</script>
+{/if}

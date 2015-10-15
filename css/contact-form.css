@@ -1,0 +1,147 @@
+/**************************************************************************
+					Contact Page Styles
+**************************************************************************/
+#contact input {
+    height: 29px;
+}
+#contact select {
+    height: 36px;
+}
+#contact input, #contact textarea, #contact select {
+    font-family: "Gotham Book" !important;
+    font-size: 12px !important;
+    color: #666;
+}
+#contact .selector, #contact select {
+    width: 360px !important;
+}
+#contact .selector span {
+    width: 330px !important;
+}
+#contact .wht_bg {
+    margin-bottom: 40px;
+}
+.contact-title {
+  margin: -5px 0 10px 0;
+  line-height: 23px;
+  color:#aaa }
+  .contact-title i {
+    font-size: 23px;
+    color: #c0c0c0;
+    padding: 0 8px 0 0; }
+
+.contact-form-box {
+  padding: 0;
+  margin: 0 0 30px 0;
+  }
+  .contact-form-box fieldset {
+    padding: 0 19px 21px 19px;  
+    }
+  .contact-form-box label {
+    margin: 0 0 6px 0; 
+    width: 100%;
+    display: block;
+    font-family: "Raleway Medium";
+	}
+  .contact-form-box .page-subheading {
+    padding-left: 0px;
+    border: none;
+    margin-bottom: 20px;
+    font-size: 18px;
+	text-transform: none;
+	font-weight: normal;
+	border-bottom: 1px solid #e0e0e0; }  
+  .contact-form-box #desc_contact0 {
+    display: none; }
+  .contact-form-box .form-group {
+    margin-bottom: 22px; }
+  .contact-form-box .form-group textarea {
+    height: 218px;
+    width: calc(100% - 12px); }
+  .contact-form-box .submit {
+    margin-top: 13px; }
+  .contact-form-box select.form-control {    
+    width: 100%; }
+    .contact-form-box .col-md-6 {
+    	width:100%;
+    	float: left;
+    }
+    .contact-form-box select {
+        width: 372px;
+    }
+   #submitMessage {float: right;}
+   .contact-form-box button {
+        width: 140px;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+   }
+   .contact-form-box button span {
+       font-family: "Gotham Book";
+        font-size: 14px; 
+        color: #fff;       
+   }
+   .contact-success-form-box .col-1 {
+        float: left;
+        width: 464px;
+        margin: auto;
+        height: 363px;
+        padding: 20px 0 0 20px;
+   }
+   .contact-success-form-box .col-2 {
+        float: right;
+        padding: 20px 50px 0 0;
+   }
+   .contact-success-form-box .col-2 img {
+        width: 309px;
+        height: 300px;
+        display: block;
+   }
+   .contact-form-box input.error, .contact-form-box select.error, .contact-form-box textarea.error {
+       background: none;
+       border: 1px solid #ea5450 !important;
+       outline: none;
+       color: #000;
+   }
+   .contact-form-box label.error {
+        font-size: 12px;
+        background: none;
+        color: #ea5450;
+        font-family: "Raleway Medium";
+        padding: 0 0 13px 0;
+    }
+   @media (max-width : 1079px) {
+       .contact-success-form-box .col-1 {
+            width: auto;    
+            height: auto;
+       }
+       .contact-success-form-box .col-2 {
+            float: none;
+            width: 100%;
+            clear: both;
+       }
+       .contact-success-form-box .col-2 img {
+            margin: 0 auto;
+       }
+   }
+   @media (max-width: 479px) {
+       .contact-success-form-box .col-2 img {
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+       }
+   }
+   @media (max-width : 979px) {
+       .contact-form-box input, .contact-form-box select, .contact-form-box textarea {
+           width: 94% !important;
+       }
+       #contact .selector {
+            width: 95% !important;
+        }
+        #contact select {
+            width: 100% !important;
+        }
+        #contact .selector span {
+            width: auto !important;
+        }
+   }

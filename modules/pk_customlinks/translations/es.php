@@ -1,0 +1,38 @@
+<?php
+
+global $_MODULE;
+$_MODULE = array();
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_1d9a0c85e7ad290193a1f9763905b6d2'] = '\"Mi cuenta\":';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_00d23a76e43b46dae9ec7aa9dcbebb32'] = 'habilitado';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_b9f5c797ebbf55adccdd8539a65a0241'] = 'Desabilitado';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_143815f6671a1dfd505ed63938b98257'] = '\"My lista de deseos\":';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_e1c4c3fda26cf0c52158ed990b542773'] = '\"Mis favoritos\":';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_574fd70e309e93117546459290760268'] = '\"Ver lista\":';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_f9ec8ea9fcd24f878a4f80005407ca3c'] = 'Comparador';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_06933067aafd48425d67bcb01bba5cb6'] = 'Actualizar';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_387a8014f530f080bf2f3be723f8c164'] = 'Lista de enlaces';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_b718adec73e04ce3ec720dd11a06a308'] = 'ID';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_9dffbf69ffba8bc38bc4e01abf4b1675'] = 'Texto';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_e6b391a8d2c4d45902a23a8b6585703d'] = 'URL';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_06df33001c1d7187fdd81ea1f5b277aa'] = 'Acciones';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_cad0a4e92b29bcb1ff1fc4f8524cfdc2'] = 'No hay enlaces';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_bea8d9e6a0d57c4a264756b4f9822ed9'] = 'Mi cuenta';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_74ecd9234b2a42ca13e775193f391833'] = 'Mis pedidos';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_5973e925605a501b18e48280f04f0347'] = 'Mis devoluciones';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_89080f0eedbd5491a93157930f1e45fc'] = 'Mis devoluciones de mercancía';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_9132bc7bac91dd4e1c453d4e96edf219'] = 'Mis créditos';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_e45be0a0d4a0b62b15694c1a631e6e62'] = 'Mis direcciones';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_b4b80a59559e84e8497f746aac634674'] = 'Gestionar mi información personal';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_63b1ba91576576e6cf2da6fab7617e58'] = 'Mi información personal';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_95d2137c196c7f84df5753ed78f18332'] = 'Mis cupones';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_4840f4437f55e68a587d358090b948d1'] = 'Mi lista de deseos';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_4a84e5921e203aede886d04fc41a414b'] = 'Remover este producto de mi lista de deseos';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_09dc02ecbb078868a3a86dded030076d'] = 'No hay productos';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_f2c3119ccf960f54688bf6f227390e36'] = 'Mis favoritos';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_44fd621c6504b8a5346946650682a842'] = 'Ningún producto favorito ha sido determinado aún';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_dba220c8401473097f2429678e7ee55a'] = 'Productos vistos recientemente';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_afcfcce1c3bc846f73ed81877dae88b7'] = 'Ver lista';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_8f7f4c1ce7a4f933663d10543562b096'] = 'Acerca';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_8be6b7ce1744c9f10ad997ae2b42299c'] = 'Ningún producto visto aún';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_a12832e77b4e8924023f7900d6103e11'] = 'Lista de comparación';
+$_MODULE['<{pk_customlinks}alysum>pk_customlinks_297893fce84d25673177df3afeebe761'] = 'Ningún producto comparado';

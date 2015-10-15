@@ -1,0 +1,28 @@
+
+[{shop_url}] 
+
+Hola {firstname} {lastname},
+
+Gracias por crear una cuenta de cliente en {shop_name}. 
+
+Estos son sus datos de acceso:
+
+DIRECCIÓN EMAIL: {email}
+
+CONTRASEÑA: {passwd} 		 
+
+Consejos de Seguridad:
+
+* Mantenga los detalles de su cuenta segura.
+
+* Nunca revele sus datos de accesos a otras personas.
+
+* Cambie su contraseña regularmente.
+
+* Si sospecha que alguien esta usando su cuenta, comuniquenos inmediatamente.
+
+Ahora podrá realizar pedidos en nuestra tienda: {shop_name}
+[{shop_url}] 
+
+{shop_name} [{shop_url}]
+

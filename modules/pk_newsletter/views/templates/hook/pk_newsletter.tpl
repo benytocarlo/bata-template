@@ -28,8 +28,8 @@
 						</div>
 						<div class="genero">
 							<select name="sexo" class="selsexo">
-								<option value="Hombre">{l s='Soy Hombre' mod='pk_newsletter'}</option>
 								<option value="Mujer">{l s='Soy Mujer' mod='pk_newsletter'}</option>
+								<option value="Hombre">{l s='Soy Hombre' mod='pk_newsletter'}</option>
 							</select>
 						</div>
 						<button type="submit" class="btn-subscription" name="submitNewsletter" value="{l s='Suscribete' mod='pk_newsletter'}">{l s='Suscríbete'}</button>
